@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "./icons/logo";
 
 function App() {
   const [wordToSearch, setWordToSearch] = useState("");
@@ -9,7 +10,9 @@ function App() {
   return (
     <div className="brainbook">
       <div className="container">
-        <nav className="nav"></nav>
+        <nav className="nav">
+          <Logo />
+        </nav>
       </div>
     </div>
   );
