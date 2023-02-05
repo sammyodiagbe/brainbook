@@ -2,6 +2,7 @@ import { useState } from "react";
 import IconArrowDown from "./icons/iconArrowDown";
 import Logo from "./icons/logo";
 import MoonIcon from "./icons/moonIcon";
+import SearchIcon from "./icons/searchIcon";
 
 function App() {
   const [wordToSearch, setWordToSearch] = useState("");
@@ -26,6 +27,18 @@ function App() {
             </div>
           </div>
         </nav>
+        <div className="input-container">
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Search here"
+              value={wordToSearch}
+              onChange={(event) => setWordToSearch(event.target.value)}
+            />
+            <SearchIcon />
+          </div>
+        </div>
+        <main className="content"></main>
       </div>
     </div>
   );
