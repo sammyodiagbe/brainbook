@@ -1,6 +1,7 @@
 import { useState } from "react";
 import IconArrowDown from "./icons/iconArrowDown";
 import Logo from "./icons/logo";
+import MoonIcon from "./icons/moonIcon";
 
 function App() {
   const [wordToSearch, setWordToSearch] = useState("");
@@ -18,6 +19,10 @@ function App() {
             <div className="custom-drop-down">
               <span className="current-font">{font}</span>
               <IconArrowDown />
+            </div>
+            <div className="theme-toggle">
+              <div className="toggle-container"></div>
+              <MoonIcon />
             </div>
           </div>
         </nav>
