@@ -1,0 +1,54 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+ }
+
+ @font-face {
+    font-family: "Inconsolata-regular";
+    src: local("../fonts/inconsolata/static/inconsolata-Regular.ttf");
+ }
+
+ @font-face {
+    font-family: "Inconsolata-bold";
+    src: local("../fonts/inconsolata/static/Inconsolata-Begular.ttf");
+ }
+
+ @font-face {
+    font-family: "Inconsolata-regular";
+    src: local("../fonts/inconsolata/static/Inconsolata-Regular.ttf");
+ }
+
+
+
+ @font-face {
+    font-family: "Inter-bold";
+    src: local("../fonts/inconsolata/static/Inter-Bold.ttf");
+ }
+
+ @font-face {
+    font-family: "Inter-regular";
+    src: local("../fonts/inconsolata/static/Inter-Regular.ttf");
+ }
+
+ @font-face {
+    font-family: "Lora-bold";
+    src: local("../fonts/inconsolata/static/Lora-Bold.ttf");
+ }
+
+ @font-face {
+    font-family: "Lora-regular";
+    src: local("../fonts/inconsolata/static/Lora-Regular.ttf");
+ }
+ body {
+    font-size: 16px;
+ }
+
+ div.brainbook {
+
+    div.branibox-serif {}
+    div.brainbox-mono {}
+    div.brainbox-{}
+ }

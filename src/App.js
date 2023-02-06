@@ -77,7 +77,7 @@ function App() {
 
   return (
     <div
-      className={`brainbook-${font} ${
+      className={`brainbook brainbook-${font} ${
         darkTheme ? "dark-theme" : "light-theme"
       }`}
     >
