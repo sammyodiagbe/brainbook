@@ -129,7 +129,7 @@ function App() {
                 <span key={index}>
                   Source{" "}
                   <a href={source} target="_blank">
-                    {source} {NewWindowIcon}
+                    {source} <NewWindowIcon />
                   </a>
                 </span>
               );
