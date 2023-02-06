@@ -8,6 +8,7 @@ import { endpointUrl } from "./variables";
 function App() {
   const [wordToSearch, setWordToSearch] = useState("");
   const [font, setFont] = useState("serif");
+  const [darkTheme, useDarkTheme] = useState(false);
 
   // later can save the old word the user has searched for before
   // then prepopulate the data based on that
@@ -24,7 +25,11 @@ function App() {
   };
 
   return (
-    <div className={`brainbook-${font}`}>
+    <div
+      className={`brainbook-${font} ${
+        darkTheme ? "dark-theme" : "light-theme"
+      }`}
+    >
       <div className="container">
         <nav className="nav">
           <Logo />
