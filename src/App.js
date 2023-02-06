@@ -3,6 +3,7 @@ import IconArrowDown from "./icons/iconArrowDown";
 import Logo from "./icons/logo";
 import MoonIcon from "./icons/moonIcon";
 import SearchIcon from "./icons/searchIcon";
+import { endpointUrl } from "./variables";
 
 function App() {
   const [wordToSearch, setWordToSearch] = useState("");
@@ -10,6 +11,17 @@ function App() {
 
   // later can save the old word the user has searched for before
   // then prepopulate the data based on that
+
+  const getWordData = async (event) => {
+    event.preventDefault();
+    // do validation later
+    if (!wordToSearch || wordToSearch === null) return;
+
+    const response = await fetch(endpointUrl(wordToSearch));
+    const data = await response.json();
+
+    console.log(data);
+  };
 
   return (
     <div className={`brainbook-${font}`}>
@@ -29,12 +41,15 @@ function App() {
         </nav>
         <div className="input-container">
           <div className="input">
-            <input
-              type="text"
-              placeholder="Search here"
-              value={wordToSearch}
-              onChange={(event) => setWordToSearch(event.target.value)}
-            />
+            <form onSubmit={getWordData}>
+              <input
+                type="text"
+                placeholder="Search here"
+                value={wordToSearch}
+                onChange={(event) => setWordToSearch(event.target.value)}
+              />
+            </form>
+
             <SearchIcon />
           </div>
         </div>
