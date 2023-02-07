@@ -1,4 +1,4 @@
-
+$padding: 1em;
  @font-face {
     font-family: "Inconsolata-bold";
     src: url("./fonts/inconsolata/static/Inconsolata-Bold.ttf");
@@ -50,4 +50,10 @@
     div.branibox-serif {}
     div.brainbox-san-serif {}
     div.brainbox-monospace{}
+
+    nav.nav {
+      display: flex;
+      justify-content: space-between;
+      padding: $padding;
+    }
  }

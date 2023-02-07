@@ -45,4 +45,14 @@ body {
 div.brainbook {
   font-family: Lora-Regular;
 }
+
+div.brainbook nav.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+}
 /*# sourceMappingURL=index.css.map */
