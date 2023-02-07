@@ -51,7 +51,7 @@ function App() {
                   return (
                     <li>
                       <span className="definition">{def}</span>
-                      {example && <span className="example">{example}</span>}
+                      {example && <p className="example">"{example}"</p>}
                     </li>
                   );
                 })}
@@ -60,7 +60,9 @@ function App() {
                 {synonyms && synonyms.length ? (
                   <div className="syn">
                     <span>Synonyms </span>{" "}
-                    {synonyms.reduce((a, b) => a + ", " + b)}
+                    <b className="s">
+                      {synonyms.reduce((a, b) => a + ", " + b)}
+                    </b>
                   </div>
                 ) : null}
                 {antonyms && antonyms.length ? (
@@ -126,11 +128,11 @@ function App() {
           <div className="meaning-container">{meaningStructure}</div>
         </main>
         <div className="sources">
+          <p className="source">Source</p>
           {sourceUrls &&
             sourceUrls.map((source, index) => {
               return (
                 <span key={index}>
-                  Source{" "}
                   <a href={source} target="_blank">
                     {source} <NewWindowIcon />
                   </a>

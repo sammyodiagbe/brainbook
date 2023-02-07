@@ -1,6 +1,10 @@
 $padding: 1em;
 $margin-right: 1em;
 $input-border-radius: 20px;
+$secondary_color: #A445ED;
+$secondary_two: #8f19e8;
+$color_on_white: #2d2d2d;
+$color_example: #7d7d7d;
  @font-face {
     font-family: "Inconsolata-bold";
     src: url("./fonts/inconsolata/static/Inconsolata-Bold.ttf");
@@ -138,6 +142,15 @@ a {
 
                   li {
                      margin-bottom: 1.5em;
+                     color: $secondary_two;
+                     p.example {
+                        margin: .5em 0;
+                        font-size: .9em;
+                        color: $color_example;
+                     }
+                     span.definition,p.example {
+                        color: $color_on_white;
+                     }
                   }
                }
             }
@@ -149,6 +162,9 @@ a {
          padding: $padding 0;
          div.syn {
             margin-bottom: $padding;
+            b {
+               color: $secondary_color;
+            }
          }
        }
 

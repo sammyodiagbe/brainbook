@@ -149,6 +149,17 @@ div.brainbook div.container main.content div.meaning-container div.meaning ul {
 
 div.brainbook div.container main.content div.meaning-container div.meaning ul li {
   margin-bottom: 1.5em;
+  color: #8f19e8;
+}
+
+div.brainbook div.container main.content div.meaning-container div.meaning ul li p.example {
+  margin: .5em 0;
+  font-size: .9em;
+  color: #7d7d7d;
+}
+
+div.brainbook div.container main.content div.meaning-container div.meaning ul li span.definition, div.brainbook div.container main.content div.meaning-container div.meaning ul li p.example {
+  color: #2d2d2d;
 }
 
 div.brainbook div.container div.syn-an {
@@ -157,6 +168,10 @@ div.brainbook div.container div.syn-an {
 
 div.brainbook div.container div.syn-an div.syn {
   margin-bottom: 1em;
+}
+
+div.brainbook div.container div.syn-an div.syn b {
+  color: #A445ED;
 }
 
 div.brainbook div.container div.sources span a {
