@@ -42,6 +42,14 @@ body {
   font-size: 16px;
 }
 
+button {
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
 div.brainbook {
   font-family: Lora-Regular;
 }
@@ -72,7 +80,45 @@ div.brainbook nav.nav div.nav-side div.custom-drop-down {
   margin-right: 1em;
 }
 
+div.brainbook div.input-container {
+  padding: 1em;
+}
+
+div.brainbook div.input-container div.input {
+  background: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+  padding-left: 10px;
+  border-radius: 20px;
+}
+
+div.brainbook div.input-container div.input form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.brainbook div.input-container div.input form input {
+  font-size: 1em;
+  background: transparent;
+  width: 100%;
+}
+
 div.brainbook main.content {
   padding: 1em;
+}
+
+div.brainbook main.content div.content-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=index.css.map */
