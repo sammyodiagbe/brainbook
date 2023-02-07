@@ -58,51 +58,107 @@ a {
     div.brainbox-san-serif {}
     div.brainbox-monospace{}
 
-    nav.nav {
-      display: flex;
-      justify-content: space-between;
+    div.container {
       padding: $padding;
-      align-items: center;
-
-      div.nav-side {
-         display: flex;
-         align-items: center;
-         div.custom-drop-down {
-            margin-right: $margin-right;
-         }
-
-         div.theme-toggle {}
-         div.toggle-container{}
-      }
-    }
-
-    div.input-container {
-      padding: $padding;
-      
-      div.input {
-         background: #eee;
-         display: flex;
-         padding: $padding;
-         padding-left: 10px;
-         border-radius: $input-border-radius;
-         form {
-            flex: 1;
-            input {
-               font-size: 1em;
-               background: transparent;
-               width: 100%;
-            }
-         }
-      }
-    }
-
-    main.content {
-      padding: $padding;
-
-      div.content-top {
+       nav.nav {
          display: flex;
          justify-content: space-between;
          align-items: center;
-      }
+   
+         div.nav-side {
+            display: flex;
+            align-items: center;
+            div.custom-drop-down {
+               margin-right: $margin-right;
+            }
+   
+            div.theme-toggle {}
+            div.toggle-container{}
+         }
+       }
+   
+       div.input-container {
+         padding: 1.5em 0;
+         div.input {
+            background: #eee;
+            display: flex;
+            padding: $padding;
+            padding-left: 10px;
+            border-radius: $input-border-radius;
+            form {
+               flex: 1;
+               input {
+                  font-size: 1em;
+                  background: transparent;
+                  width: 100%;
+               }
+            }
+         }
+       }
+   
+       main.content {
+   
+         div.content-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            padding: $padding 0;
+            // button.audio {
+            //    width: 20px;
+            //    height: 20px;
+            // }
+               div.left {
+                  h1 {
+                     margin-bottom: 8px;
+                  }
+               }
+            button.audio {
+               svg.play-btn {
+                  width: 60px;
+               }
+            }
+         }
+   
+         div.meaning-container {
+            div.meaning {
+
+               padding-top: $padding;
+               h3.part-of-speech {
+                  margin-bottom: $padding;
+               }
+
+               p {
+                  &.meaning {
+                     margin-bottom: .8em;
+                  }
+               }
+               ul {
+                  padding-left: $padding;
+
+                  li {
+                     margin-bottom: 1.5em;
+                  }
+               }
+            }
+         }
+   
+       }
+
+       div.syn-an {
+         padding: $padding 0;
+         div.syn {
+            margin-bottom: $padding;
+         }
+       }
+
+       div.sources {
+         span {
+            a {
+               font-size: .8em;
+            }
+         }
+       }
     }
+
  }
