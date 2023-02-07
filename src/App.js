@@ -90,7 +90,10 @@ function App() {
               <IconArrowDown />
             </div>
             <div className="theme-toggle">
-              <div className="toggle-container"></div>
+              <div className="toggle-container">
+                <label htmlFor="toggle"></label>
+                <input type={"checkbox"} id="toggle" name="toggle" hidden />
+              </div>
               <MoonIcon />
             </div>
           </div>
