@@ -40,6 +40,7 @@
 
 body {
   font-size: 16px;
+  color: #2d2d2d;
 }
 
 button {
@@ -80,7 +81,54 @@ div.brainbook div.container nav.nav div.nav-side {
 }
 
 div.brainbook div.container nav.nav div.nav-side div.custom-drop-down {
-  margin-right: 1em;
+  margin-right: 2em;
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container {
+  margin-right: 8px;
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container input#input:checked ~ label.toggle {
+  background: #8f19e8;
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container input#input:checked ~ label.toggle::after {
+  border-radius: 15px;
+  left: calc(100% - (18px + 5px));
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container label.toggle {
+  display: block;
+  position: relative;
+  height: 25px;
+  width: 60px;
+  border-radius: 20px;
+  background: #979797;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container label.toggle::after {
+  content: " ";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 15px;
+  left: 5px;
+  z-index: 20;
+  background: #fff;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 div.brainbook div.container div.input-container {
@@ -125,6 +173,10 @@ div.brainbook div.container main.content div.content-top {
 
 div.brainbook div.container main.content div.content-top div.left h1 {
   margin-bottom: 8px;
+}
+
+div.brainbook div.container main.content div.content-top div.left p.phonetic {
+  color: #8f19e8;
 }
 
 div.brainbook div.container main.content div.content-top button.audio svg.play-btn {

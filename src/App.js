@@ -93,8 +93,8 @@ function App() {
             </div>
             <div className="theme-toggle">
               <div className="toggle-container">
-                <label htmlFor="toggle"></label>
                 <input type={"checkbox"} id="toggle" name="toggle" hidden />
+                <label htmlFor="toggle" className="toggle"></label>
               </div>
               <MoonIcon />
             </div>
@@ -106,7 +106,9 @@ function App() {
               <input
                 type="text"
                 placeholder="Search here"
+                className="input"
                 value={wordToSearch}
+                checked
                 onChange={(event) => setWordToSearch(event.target.value)}
               />
             </form>
@@ -118,7 +120,7 @@ function App() {
           <div className="content-top">
             <div className="left">
               <h1>{word}</h1>
-              <p>{phonetic}</p>
+              <p className="phonetic">{phonetic}</p>
             </div>
 
             <button className="audio">

@@ -1,10 +1,11 @@
 $padding: 1em;
-$margin-right: 1em;
+$margin-right: 2em;
 $input-border-radius: 20px;
 $secondary_color: #A445ED;
 $secondary_two: #8f19e8;
 $color_on_white: #2d2d2d;
 $color_example: #7d7d7d;
+$toggle_background_color: #979797;
  @font-face {
     font-family: "Inconsolata-bold";
     src: url("./fonts/inconsolata/static/Inconsolata-Bold.ttf");
@@ -49,6 +50,7 @@ $color_example: #7d7d7d;
 
  body {
     font-size: 16px;
+    color: $color_on_white;
  }
  button {
    background: transparent;
@@ -76,8 +78,43 @@ a {
                margin-right: $margin-right;
             }
    
-            div.theme-toggle {}
-            div.toggle-container{}
+            div.theme-toggle {
+               display: flex;
+               align-items: center;
+               div.toggle-container{
+                  margin-right: 8px;
+                  input#input:checked ~ label.toggle{
+                     background:$secondary_two;
+                     &::after {
+                        border-radius: 15px;
+                        left: calc(100% - (18px + 5px));
+                        
+                     }
+                  }
+                  label.toggle {
+                     display: block;
+                     position: relative;
+                     height: 25px;
+                     width: 60px;
+                     border-radius: 20px;
+                     background: $toggle_background_color;
+                     transition: all .5s;
+                     &::after {
+                        content: " ";
+                        position: absolute;
+                        height: 18px;
+                        width: 18px;
+                        border-radius: 15px;
+                        left: 5px;
+                        z-index: 20;
+                        background: #fff;
+                        top: 50%;
+                        transform: translateY(-50%);
+                     }
+                  }
+               }
+
+            }
          }
        }
    
@@ -115,6 +152,10 @@ a {
                div.left {
                   h1 {
                      margin-bottom: 8px;
+                  }
+
+                  p.phonetic {
+                     color: $secondary_two;
                   }
                }
             button.audio {
