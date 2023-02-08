@@ -211,7 +211,7 @@ function App() {
                   sourceUrls.map((source, index) => {
                     return (
                       <span key={index}>
-                        Source
+                        Source{" "}
                         <a href={source} target="_blank">
                           {source} <NewWindowIcon />
                         </a>
