@@ -10,7 +10,7 @@ import { endpointUrl } from "./variables";
 function App() {
   const [wordToSearch, setWordToSearch] = useState("Keyboard");
   const [font, setFont] = useState("serif");
-  const [darkTheme, useDarkTheme] = useState(false);
+  const [darkTheme, setUseDarkTheme] = useState(false);
   const [responseData, setResponseData] = useState({});
 
   // later can save the old word the user has searched for before
@@ -34,6 +34,12 @@ function App() {
   };
 
   const { word, meanings, phonetic, sourceUrls } = responseData;
+
+  const toggleDarkTheme = (event) => {
+    // useDarkTheme(event.target.checked);
+    console.log(event.target.checked);
+    setUseDarkTheme(event.target.checked);
+  };
 
   const meaningStructure =
     meanings && meanings.length
@@ -76,7 +82,6 @@ function App() {
           );
         })
       : null;
-
   return (
     <div
       className={`brainbook brainbook-${font} ${
@@ -93,7 +98,13 @@ function App() {
             </div>
             <div className="theme-toggle">
               <button className="toggle-container">
-                <input type={"checkbox"} id="toggle" name="toggle" hidden />
+                <input
+                  type={"checkbox"}
+                  id="toggle"
+                  name="toggle"
+                  hidden
+                  onChange={toggleDarkTheme}
+                />
                 <label htmlFor="toggle" className="toggle"></label>
               </button>
               <MoonIcon />
@@ -123,7 +134,7 @@ function App() {
               <p className="phonetic">{phonetic}</p>
             </div>
 
-            <button className="audio">
+            <button className="audio" disabled>
               <PlayIcon />
             </button>
           </div>

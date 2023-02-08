@@ -53,6 +53,10 @@ a {
 
 div.brainbook {
   font-family: Lora-Regular;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 div.brainbook div.container {
@@ -183,6 +187,10 @@ div.brainbook div.container main.content div.content-top div.left p.phonetic {
   color: #8f19e8;
 }
 
+div.brainbook div.container main.content div.content-top button.audio:disabled svg g {
+  fill: #eee;
+}
+
 div.brainbook div.container main.content div.content-top button.audio svg.play-btn {
   width: 60px;
 }
@@ -232,5 +240,41 @@ div.brainbook div.container div.syn-an div.syn b {
 
 div.brainbook div.container div.sources span a {
   font-size: .8em;
+}
+
+div.brainbook.dark-theme {
+  background: #050505;
+  color: whitesmoke;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning {
+  padding-top: 1em;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning h3.part-of-speech {
+  margin-bottom: 1em;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning p.meaning {
+  margin-bottom: .8em;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning ul {
+  padding-left: 1em;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning ul li {
+  margin-bottom: 1.5em;
+  color: #8f19e8;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning ul li p.example {
+  margin: .5em 0;
+  font-size: .9em;
+  color: whitesmoke !important;
+}
+
+div.brainbook.dark-theme div.meaning-container div.meaning ul li span.definition, div.brainbook.dark-theme div.meaning-container div.meaning ul li p.example {
+  color: whitesmoke !important;
 }
 /*# sourceMappingURL=index.css.map */

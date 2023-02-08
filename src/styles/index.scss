@@ -6,6 +6,9 @@ $secondary_two: #8f19e8;
 $color_on_white: #2d2d2d;
 $color_example: #7d7d7d;
 $toggle_background_color: #979797;
+
+// dark theme 
+$background_color: #050505;
  @font-face {
     font-family: "Inconsolata-bold";
     src: url("./fonts/inconsolata/static/Inconsolata-Bold.ttf");
@@ -60,17 +63,20 @@ a {
 }
  div.brainbook {
     font-family: Lora-Regular;
-    div.branibox-serif {}
-    div.brainbox-san-serif {}
-    div.brainbox-monospace{}
-
-    div.container {
+   transition:background-color .5s;
+   min-height: 100vh;
+   min-width: 100vw;
+   div.branibox-serif {}
+   div.brainbox-san-serif {}
+   div.brainbox-monospace{}
+   
+   div.container {
       padding: $padding;
-       nav.nav {
+      nav.nav {
          display: flex;
          justify-content: space-between;
          align-items: center;
-   
+         
          div.nav-side {
             display: flex;
             align-items: center;
@@ -161,6 +167,13 @@ a {
                   }
                }
             button.audio {
+               &:disabled {
+                  svg {
+                     g {
+                        fill: #eee;
+                     }
+                  }
+               }
                svg.play-btn {
                   width: 60px;
                }
@@ -209,15 +222,50 @@ a {
                color: $secondary_color;
             }
          }
-       }
-
-       div.sources {
+      }
+      
+      div.sources {
          span {
             a {
                font-size: .8em;
             }
          }
-       }
-    }
+      }
+   }
+   
+   &.dark-theme {
+     background: $background_color;
+     color: whitesmoke;
+     div.meaning-container {
+        div.meaning {
 
+           padding-top: $padding;
+           h3.part-of-speech {
+              margin-bottom: $padding;
+           }
+
+           p {
+              &.meaning {
+                 margin-bottom: .8em;
+              }
+           }
+           ul {
+              padding-left: $padding;
+
+              li {
+                 margin-bottom: 1.5em;
+                 color: $secondary_two;
+                 p.example {
+                    margin: .5em 0;
+                    font-size: .9em;
+                    color: whitesmoke !important;
+                 }
+                 span.definition,p.example {
+                    color: whitesmoke !important;
+                 }
+              }
+           }
+        }
+     }
+   }
  }
