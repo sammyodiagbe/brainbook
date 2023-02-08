@@ -6,6 +6,8 @@ $secondary_two: #8f19e8;
 $color_on_white: #2d2d2d;
 $color_example: #7d7d7d;
 $toggle_background_color: #979797;
+$input_backgroun_dark: #1f1f1f;
+$white: whitesmoke;
 
 // dark theme 
 $background_color: #050505;
@@ -136,7 +138,9 @@ a {
             border-radius: $input-border-radius;
             form {
                flex: 1;
+               background-color: inherit;
                input {
+                  background-color: inherit;
                   font-size: 1em;
                   background: transparent;
                   width: 100%;
@@ -236,6 +240,19 @@ a {
    &.dark-theme {
      background: $background_color;
      color: whitesmoke;
+
+     div.container {
+      div.input-container {
+         div.input {
+            background: $input_backgroun_dark;
+            form {
+               input {
+                  color: $white;
+               }
+            }
+         }
+      }
+     }
      div.meaning-container {
         div.meaning {
 
