@@ -248,6 +248,25 @@ div.brainbook div.container div.input-container div.input form input {
   width: 100%;
 }
 
+div.brainbook div.container main.content div.no-search {
+  min-height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 0;
+}
+
+div.brainbook div.container main.content div.no-search p {
+  padding: 2em 3em;
+}
+
 div.brainbook div.container main.content div.content-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -367,5 +386,12 @@ div.brainbook.dark-theme div.meaning-container div.meaning ul li p.example {
 
 div.brainbook.dark-theme div.meaning-container div.meaning ul li span.definition, div.brainbook.dark-theme div.meaning-container div.meaning ul li p.example {
   color: whitesmoke !important;
+}
+
+@media screen and (min-width: 769px) {
+  div.brainbook div.container {
+    width: 750px;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=index.css.map */

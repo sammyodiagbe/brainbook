@@ -8,7 +8,7 @@ import SearchIcon from "./icons/searchIcon";
 import { endpointUrl } from "./variables";
 
 function App() {
-  const [wordToSearch, setWordToSearch] = useState("Keyboard");
+  const [wordToSearch, setWordToSearch] = useState("");
   const [font, setFont] = useState("serif");
   const [darkTheme, setUseDarkTheme] = useState(false);
   const [responseData, setResponseData] = useState({});
@@ -181,35 +181,47 @@ function App() {
           </div>
         </div>
         <main className="content">
-          <div className="content-top">
-            <div className="left">
-              <h1>{word}</h1>
-              <p className="phonetic">{phonetic}</p>
+          {wordToSearch == "" || wordToSearch === null ? (
+            <div className="no-search">
+              <h1>Nothing to Search</h1>
+              <p>
+                You have not entered anything in the search box, trying entering
+                something.
+              </p>
             </div>
+          ) : (
+            <>
+              <div className="content-top">
+                <div className="left">
+                  <h1>{word}</h1>
+                  <p className="phonetic">{phonetic}</p>
+                </div>
 
-            <button
-              className="audio"
-              onClick={playAudioSound}
-              disabled={audiourl === null}
-            >
-              <PlayIcon />
-            </button>
-          </div>
-          <div className="meaning-container">{meaningStructure}</div>
+                <button
+                  className="audio"
+                  onClick={playAudioSound}
+                  disabled={audiourl === null}
+                >
+                  <PlayIcon />
+                </button>
+              </div>
+              <div className="meaning-container">{meaningStructure}</div>
+              <div className="sources">
+                {sourceUrls &&
+                  sourceUrls.map((source, index) => {
+                    return (
+                      <span key={index}>
+                        Source
+                        <a href={source} target="_blank">
+                          {source} <NewWindowIcon />
+                        </a>
+                      </span>
+                    );
+                  })}
+              </div>
+            </>
+          )}
         </main>
-        <div className="sources">
-          <p className="source">Source</p>
-          {sourceUrls &&
-            sourceUrls.map((source, index) => {
-              return (
-                <span key={index}>
-                  <a href={source} target="_blank">
-                    {source} <NewWindowIcon />
-                  </a>
-                </span>
-              );
-            })}
-        </div>
       </div>
     </div>
   );
