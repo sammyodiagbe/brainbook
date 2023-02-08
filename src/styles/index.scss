@@ -81,7 +81,7 @@ a {
             div.theme-toggle {
                display: flex;
                align-items: center;
-               div.toggle-container{
+               button.toggle-container{
                   margin-right: 8px;
                   input[type="checkbox"]:checked + label.toggle{
                      background:$secondary_two;

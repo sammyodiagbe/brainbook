@@ -93,22 +93,22 @@ div.brainbook div.container nav.nav div.nav-side div.theme-toggle {
           align-items: center;
 }
 
-div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container {
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle button.toggle-container {
   margin-right: 8px;
 }
 
-div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container input[type="checkbox"]:checked + label.toggle {
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle button.toggle-container input[type="checkbox"]:checked + label.toggle {
   background: #8f19e8;
 }
 
-div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container input[type="checkbox"]:checked + label.toggle::after {
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle button.toggle-container input[type="checkbox"]:checked + label.toggle::after {
   -webkit-transition: all .5s;
   transition: all .5s;
   border-radius: 15px;
   left: calc(100% - (18px + 5px));
 }
 
-div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container label.toggle {
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle button.toggle-container label.toggle {
   display: block;
   position: relative;
   height: 25px;
@@ -119,7 +119,7 @@ div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-con
   transition: all .5s;
 }
 
-div.brainbook div.container nav.nav div.nav-side div.theme-toggle div.toggle-container label.toggle::after {
+div.brainbook div.container nav.nav div.nav-side div.theme-toggle button.toggle-container label.toggle::after {
   -webkit-transition: all .5s;
   transition: all .5s;
   content: " ";
