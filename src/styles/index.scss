@@ -4,7 +4,7 @@ $input-border-radius: 20px;
 $secondary_color: #A445ED;
 $secondary_two: #8f19e8;
 $color_on_white: #2d2d2d;
-$color_example: #7d7d7d;
+$color_example: rgb(125, 125, 125);
 $toggle_background_color: #979797;
 $input_backgroun_dark: #1f1f1f;
 $white: whitesmoke;
@@ -58,7 +58,7 @@ $background_color: #050505;
     color: $color_on_white;
  }
  button {
-   background: transparent;
+   background: inherit;
  }
 a {
    text-decoration: none;
@@ -68,9 +68,24 @@ a {
    transition:background-color .5s;
    min-height: 100vh;
    min-width: 100vw;
-   div.branibox-serif {}
-   div.brainbox-san-serif {}
-   div.brainbox-monospace{}
+   &.serif {
+      font-family: "Inconsolata-Regular";
+      * {
+         font-family: "Inconsolata-Regular";
+      }
+   }
+   &.san-serif {
+      font-family: "Inter-Regular";
+      * {
+         font-family: "Inter-Regular";
+      }
+   }
+   &.monospace{
+      font-family: "Lora-Regular";
+      * {
+         font-family: "Lora-Regular";
+      }
+   }
    
    div.container {
       padding: $padding;
@@ -82,8 +97,59 @@ a {
          div.nav-side {
             display: flex;
             align-items: center;
-            div.custom-drop-down {
-               margin-right: $margin-right;
+            button.custom-drop-down {
+               margin-right: 1em;
+               padding: 8px .5em;
+               padding-right: .8em;
+               color: inherit;
+               background:inherit;
+               position: relative;
+               width: 120px;
+               border-right: 1px solid rgba(125, 125, 125, .6);
+               display: flex;
+               align-items: center;
+               span.current-font {
+                  margin-right: 10px;
+                  display: inline-block;
+                  flex: 1;
+               }
+
+               &.dark {
+                  span.drop-list {
+                     background-color: #1f1f1f;
+                     color: $white;
+                     button {
+                        color: $white;
+                        &:hover {
+                           background-color: #050505;
+                        }
+                     }
+                  }
+               }
+
+               span.drop-list {
+                  display: block;
+                  position: absolute;
+                  top: 100%;
+                  right: 0;
+                  box-shadow: 0 0 8px rgba(0,0,0,.2);
+                  // padding: 0 .5em;
+                  background:#fff;
+                  // background: inherit;
+                  // color: inherit;
+                  z-index: 20;
+
+                  button {
+                     width: 100%;
+                     display: block;
+                     padding: $padding;
+                     text-align: left;
+                     font-weight: 550;
+                     &:hover {
+                        background: #eee;
+                     }
+                  }
+               }
             }
    
             div.theme-toggle {
@@ -142,7 +208,7 @@ a {
                input {
                   background-color: inherit;
                   font-size: 1em;
-                  background: transparent;
+                  background: inherit;
                   width: 100%;
                }
             }

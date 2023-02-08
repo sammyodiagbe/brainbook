@@ -13,6 +13,7 @@ function App() {
   const [darkTheme, setUseDarkTheme] = useState(false);
   const [responseData, setResponseData] = useState({});
   const [audiourl, canPlayAudio] = useState(null);
+  const [showDrop, setShowDrop] = useState(false);
   // later can save the old word the user has searched for before
   // then prepopulate the data based on that
 
@@ -101,9 +102,14 @@ function App() {
     const audio = new Audio(audiourl);
     audio.play();
   };
+
+  const switchFont = (event) => {
+    const { font } = event.target.dataset;
+    setFont(font);
+  };
   return (
     <div
-      className={`brainbook brainbook-${font} ${
+      className={`brainbook ${font} ${
         darkTheme ? "dark-theme" : "light-theme"
       }`}
     >
@@ -111,10 +117,38 @@ function App() {
         <nav className="nav">
           <Logo />
           <div className="nav-side">
-            <div className="custom-drop-down">
+            <button
+              className={`custom-drop-down ${darkTheme && "dark"}`}
+              onClick={() => setShowDrop(!showDrop)}
+            >
+              {showDrop && (
+                <span className="drop-list">
+                  <button
+                    className="drop-trigger"
+                    data-font="serif"
+                    onClick={switchFont}
+                  >
+                    Serif
+                  </button>
+                  <button
+                    className="drop-trigger"
+                    data-font="san-serif"
+                    onClick={switchFont}
+                  >
+                    Sans-Serif
+                  </button>
+                  <button
+                    className="drop-trigger"
+                    data-font="monospace"
+                    onClick={switchFont}
+                  >
+                    Monospace
+                  </button>
+                </span>
+              )}
               <span className="current-font">{font}</span>
               <IconArrowDown />
-            </div>
+            </button>
             <div className="theme-toggle">
               <button className="toggle-container">
                 <input

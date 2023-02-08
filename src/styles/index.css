@@ -44,7 +44,7 @@ body {
 }
 
 button {
-  background: transparent;
+  background: inherit;
 }
 
 a {
@@ -57,6 +57,30 @@ div.brainbook {
   transition: background-color .5s;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+div.brainbook.serif {
+  font-family: "Inconsolata-Regular";
+}
+
+div.brainbook.serif * {
+  font-family: "Inconsolata-Regular";
+}
+
+div.brainbook.san-serif {
+  font-family: "Inter-Regular";
+}
+
+div.brainbook.san-serif * {
+  font-family: "Inter-Regular";
+}
+
+div.brainbook.monospace {
+  font-family: "Lora-Regular";
+}
+
+div.brainbook.monospace * {
+  font-family: "Lora-Regular";
 }
 
 div.brainbook div.container {
@@ -84,8 +108,65 @@ div.brainbook div.container nav.nav div.nav-side {
           align-items: center;
 }
 
-div.brainbook div.container nav.nav div.nav-side div.custom-drop-down {
-  margin-right: 2em;
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down {
+  margin-right: 1em;
+  padding: 8px .5em;
+  padding-right: .8em;
+  color: inherit;
+  background: inherit;
+  position: relative;
+  width: 120px;
+  border-right: 1px solid rgba(125, 125, 125, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down span.current-font {
+  margin-right: 10px;
+  display: inline-block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down.dark span.drop-list {
+  background-color: #1f1f1f;
+  color: whitesmoke;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down.dark span.drop-list button {
+  color: whitesmoke;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down.dark span.drop-list button:hover {
+  background-color: #050505;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down span.drop-list {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  z-index: 20;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down span.drop-list button {
+  width: 100%;
+  display: block;
+  padding: 1em;
+  text-align: left;
+  font-weight: 550;
+}
+
+div.brainbook div.container nav.nav div.nav-side button.custom-drop-down span.drop-list button:hover {
+  background: #eee;
 }
 
 div.brainbook div.container nav.nav div.nav-side div.theme-toggle {
@@ -163,7 +244,7 @@ div.brainbook div.container div.input-container div.input form {
 div.brainbook div.container div.input-container div.input form input {
   background-color: inherit;
   font-size: 1em;
-  background: transparent;
+  background: inherit;
   width: 100%;
 }
 
