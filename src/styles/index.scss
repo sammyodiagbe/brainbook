@@ -171,6 +171,13 @@ a {
                   }
                }
             button.audio {
+               &:hover {
+                  svg {
+                     g {
+                        
+                     }
+                  }
+               }
                &:disabled {
                   svg {
                      g {

@@ -12,7 +12,7 @@ function App() {
   const [font, setFont] = useState("serif");
   const [darkTheme, setUseDarkTheme] = useState(false);
   const [responseData, setResponseData] = useState({});
-
+  const [audiourl, canPlayAudio] = useState(null);
   // later can save the old word the user has searched for before
   // then prepopulate the data based on that
 
@@ -28,6 +28,17 @@ function App() {
         // an error occured
         console.log("An error has occured");
         return;
+      }
+      const { phonetics } = data[0];
+
+      const audio = phonetics.find(
+        (phon) =>
+          phon.audio != null && phon.audio !== undefined && phon.audio !== ""
+      );
+      if (audio) {
+        canPlayAudio(audio.audio);
+      } else {
+        canPlayAudio(null);
       }
       setResponseData(data[0]);
     } catch (error) {}
@@ -74,7 +85,9 @@ function App() {
                 {antonyms && antonyms.length ? (
                   <div className="syn">
                     <span>Antonyms </span>{" "}
-                    {antonyms.reduce((a, b) => a + ", " + b)}
+                    <b className="s">
+                      {antonyms.reduce((a, b) => a + ", " + b)}
+                    </b>
                   </div>
                 ) : null}
               </div>
@@ -82,6 +95,12 @@ function App() {
           );
         })
       : null;
+
+  const playAudioSound = () => {
+    if (audiourl == null) return;
+    const audio = new Audio(audiourl);
+    audio.play();
+  };
   return (
     <div
       className={`brainbook brainbook-${font} ${
@@ -134,7 +153,11 @@ function App() {
               <p className="phonetic">{phonetic}</p>
             </div>
 
-            <button className="audio" disabled>
+            <button
+              className="audio"
+              onClick={playAudioSound}
+              disabled={audiourl === null}
+            >
               <PlayIcon />
             </button>
           </div>
